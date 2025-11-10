@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, status, HTTPException
 from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
 
-from database.database import DBConnection
+from app.database.database import DBConnection
 from app.services.usuario import UsuarioService
 from app.services.notas import NotasService
 from utils.validador_rota import validador_rota

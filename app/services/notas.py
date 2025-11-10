@@ -1,6 +1,6 @@
 from datetime import datetime, timezone, timedelta
 from uuid import uuid4
-from database.database import DBConnection
+from app.database.database import DBConnection
 
 
 class NotasService:

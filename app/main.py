@@ -1,14 +1,14 @@
 from fastapi import FastAPI
 
-from app.routes import notas, usuario, authenticate, websocket
+from .routes import notas, usuario, authenticate
 
 app = FastAPI(
-    title="Projeto bloco de notas",
-    description="Exemplo de projeto FastAPI para a criação de bloco de notas",
+    title="Projeto de estágio FCJA", #mudar titulo
+    description="Projeto FastAPI para a criação de rotas com link linkados a um QrCode e usando MongoDB Atlas com data-base",
 )
 
 
 app.include_router(usuario.router)
 app.include_router(authenticate.router)
 app.include_router(notas.router)
-app.include_router(websocket.router)
+

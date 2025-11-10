@@ -12,8 +12,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 WORKDIR /app
 
 COPY ./app/. ./
-
-RUN pip install -q --upgrade pip
+ 
+RUN pip install -q --upgrade pip --timeout=1000
 
 RUN pip install -q --no-cache-dir --upgrade -r ./requirements/$ENVIRONMENT.txt
 

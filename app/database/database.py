@@ -10,7 +10,7 @@ class DBConnection:
 
     def find_one(
         self, collection: str, query: dict, projection: dict = {"_id": 0}, **kwargs: any
-    ) -> dict or bool:
+    ) -> dict or bool: # type: ignore
         try:
             result = self._connection[collection].find_one(query, projection, **kwargs)
             return result
@@ -33,7 +33,7 @@ class DBConnection:
         except Exception as error:
             return []
 
-    def aggregate(self, collection: str, pipeline: list = []) -> list or bool:
+    def aggregate(self, collection: str, pipeline: list = []) -> list or bool: # type: ignore
         try:
             result = list(self._connection[collection].aggregate(pipeline))
             return result
