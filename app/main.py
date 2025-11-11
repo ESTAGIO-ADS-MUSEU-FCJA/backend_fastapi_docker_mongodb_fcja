@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from .routes import notas, usuario, authenticate
+from .routes import notas, usuario, authenticate, nota_not_auth
 
 app = FastAPI(
     title="Projeto de estágio FCJA", #mudar titulo
@@ -11,4 +11,5 @@ app = FastAPI(
 app.include_router(usuario.router)
 app.include_router(authenticate.router)
 app.include_router(notas.router)
+app.include_router(nota_not_auth.router)
 
