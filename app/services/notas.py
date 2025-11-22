@@ -16,12 +16,12 @@ class NotasService:
         self.db_connection.insert_one("notas", data)
         return data
 
+#hou edição aqui abaixo
     def editar_nota(self, id, data, usuario):
-        if data["status"] == "Concluído":
-            data["entregue_em"] = datetime.now().isoformat()
-
         return self.db_connection.update_one(
             "notas",
             {"id": id, "usuario_id": usuario.get("info", {}).get("id")},
             {"$set": data},
         )
+
+

@@ -80,13 +80,16 @@ def deletar_usuario(id: str, current_user=Depends(validador_rota)):
             detail={"error": "Nota não deletada"},
         )
 
-
+# edição aqui abaixo
 @router.put("/{id}")
 def editar_nota(
     id: str, data: NotaAtualizacaoModel, current_user=Depends(validador_rota)
 ):
     usuario = usuario_service.decodificar_token(current_user)
-    nota = notas_service.editar_nota(id, data.dict(), usuario)
+
+    data_limpa = data.dict(exclude_unset=True)
+
+    nota = notas_service.editar_nota(id, data_limpa, usuario)
 
     if not nota:
         return JSONResponse(

@@ -8,7 +8,7 @@ crie seu arquivo .env
         MONGO_ENVIROMENT = "nome do data base"
         SECRET_KEY_JWT = "sercret_key_jwt que deve gerada a partir do aquivo gerar_secret_key.py"
 
-usar o comando docker_compose up --build
+usar o comando docker-compose up --build
 
 rodar o debug do vccode
 
